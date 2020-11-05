@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fokin - simplified metods</title>
+    <link rel="stylesheet" href="./src/style/main.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <canvas width="750px" height="550px" class="chart__canvas" id="canvas"> </canvas>
+        <div class="parameters parameters__left">
+            <br /><span style='width:100%;margin-bottom:20px' class="parameters_title">Функция:<br />
+                x˙ = α*x + β*y + κ*yx + ϕ,<br />
+                y˙ = δ*x + ε*y + η*y^3 + ψ </span>
+            <br /><span class="parameters_title">Видимое поле </span>
+
+
+            <label class="parameters__label">Start -X<input type="text" value="-3" data-type="start_segment" placeholder="-3" class="parameters__inputs" /></label>
+            <label class="parameters__label">End -X<input type="text" value="4" data-type="end_segment" placeholder="B = 4 " class="parameters__inputs" /></label>
+            <label class="parameters__label">Min function <input type="text" value="-2" data-type="min" placeholder="C = -2" class="parameters__inputs" /></label>
+
+            <label class="parameters__label">Max function<input type="text" value="2" data-type="max" placeholder="D = 2 " class="parameters__inputs" /></label>
+            <br />
+            <br /><span class="parameters_title">Настройки </span>
+            <br /><label class="parameters__label">Параметр
+                <select id="select_scale" data-type="curent_parameter" class="parameters__inputs" name="">
+                    <option data-type="curent_parameter" value="a">a</option>
+                    <option selected data-type="curent_parameter" value="b">b</option>
+                    <option data-type="curent_parameter" value="g">g</option>
+                    <option data-type="curent_parameter" value="d">d</option>
+                </select>
+            </label>
+            <br /><label class="parameters__label">Точность шага при изменении выбранного парамера <br />
+                <select id="select_scale" data-type="scale_parametrs" class="parameters__inputs" name="">
+                    <option selected data-type="scale_parametrs" value="0.0001">0.0001</option>
+                    <option data-type="scale_parametrs" value="0.001">0.001</option>
+                    <option selected data-type="scale_parametrs" value="0.01">0.01</option>
+                    <option data-type="scale_parametrs" value="0.1">0.1</option>
+                    <option data-type="scale_parametrs" value="1">1</option>
+                </select>
+            </label>
+
+            <br /><label class="parameters__label">Погрешность измерений (Принцип Рунге) <br />
+                <select id="select_scale" data-type="accuracy_rynge" class="parameters__inputs" name="">
+
+                    <option selected data-type="accuracy_rynge" value="0.0001">0.0001</option>
+                    <option data-type="accuracy_rynge" value="0.001">0.001</option>
+                    <option selected data-type="accuracy_rynge" value="0.01">0.01</option>
+                    <option data-type="accuracy_rynge" value="0.1">0.1</option>
+                    <option data-type="accuracy_rynge" value="1">1</option>
+                </select>
+            </label>
+            </label>
+
+            </br>
+
+            <label class="parameters__label">Натуральное начальное число разбиений промежутка интегрирования<input type="text" data-type="numb_splits" value="40" class="parameters__inputs" /></label>
+            <div class="parameters__label">Пределы интегрирования
+                <input type="text" data-type="upper_limit" placeholder="Верхний=1" class="parameters__inputs" />
+                <input type="text" data-type="down_limit" placeholder="Нижний=0 " class="parameters__inputs" />
+            </div>
+            <br />
+            <br /><span class="parameters_title">Настройки </span>
+            <div class="parameters__label">
+                <input type="text" data-type="a" placeholder="a = 1" class="parameters__inputs" />
+                <input type="text" data-type="b" placeholder="b = 1 " class="parameters__inputs" />
+                <input type="text" data-type="g" placeholder="g = 1" class="parameters__inputs" />
+                <input type="text" data-type="d" placeholder="d = 1 " class="parameters__inputs" />
+            </div>
+        </div>
+        <div id="status">
+            <div id="floatingCirclesG">
+                <div class="f_circleG" id="frotateG_01"></div>
+                <div class="f_circleG" id="frotateG_02"></div>
+                <div class="f_circleG" id="frotateG_03"></div>
+                <div class="f_circleG" id="frotateG_04"></div>
+                <div class="f_circleG" id="frotateG_05"></div>
+                <div class="f_circleG" id="frotateG_06"></div>
+                <div class="f_circleG" id="frotateG_07"></div>
+                <div class="f_circleG" id="frotateG_08"></div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

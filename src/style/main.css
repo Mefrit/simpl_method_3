@@ -1,0 +1,299 @@
+*,
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: rgb(21, 21, 22);
+    color: rgb(253, 53, 53);
+    width: 100%;
+}
+
+#status {
+    width: 10%;
+    min-width: 130px;
+    display: block;
+    height: 120px;
+    position: absolute;
+    left: 40%;
+
+    top: 31%;
+    border: 1px solid rgb(240, 142, 142);
+    border-radius: 30px;
+    background-color: rgb(238, 113, 113);
+    box-shadow: black 0px 0px 5px;
+}
+
+.parameters {
+    min-width: 200px;
+    width: 23%;
+    border: 1px solid rgba(97, 97, 97, 0.496);
+    border-radius: 10px;
+    float: left;
+    padding: 20px;
+
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgba(10, 3, 3, 0.414);
+}
+
+.parameters__left {
+    float: left;
+
+    margin-top: 50px;
+}
+
+.parameters__inputs {
+    width: 40%;
+    float: left;
+    padding: 5px;
+    border: 1px solid rgb(253, 53, 53);
+    border-radius: 5px;
+    background-color: rgba(97, 97, 97, 0.496);
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.parameters_title {
+    float: left;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(253, 53, 53, 0.796);
+    opacity: 1;
+}
+
+.parameters__label {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    /* padding-top: 10px; */
+}
+
+.parameters__action {
+    width: 150px;
+    background-color: rgb(123, 8, 255);
+    color: rgb(41, 41, 42);
+    padding: 5px;
+    margin-top: 25px;
+    border: 1px solid rgba(97, 97, 97, 0.496);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(97, 97, 97, 0.496);
+}
+
+.chart {
+    width: 70%;
+    /* background-color:rgba(223, 54, 54, 0.496) ; */
+}
+
+.chart__canvas {
+    min-width: 300px;
+    width: 70%;
+    /* width:550px;
+    height: 350px; */
+    /* float: left; */
+    /* width:0px; */
+    box-shadow: 0px 0px 12px rgb(204, 94, 94);
+    /* background-color: rgb(241, 168, 168); */
+    border-radius: 10px;
+    float: left;
+    background-color: white;
+    /* margin-left:10%; */
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+.container {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.parameters_checkbox {
+    width: 50px;
+    padding: 10px;
+    border: none;
+}
+
+@media screen and (max-width: 479px) {
+    /* Target portrait smartphones */
+}
+
+
+
+#floatingCirclesG {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin: auto;
+    transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    background-color: rgb(253, 53, 53);
+}
+
+.f_circleG {
+    position: absolute;
+    background-color: rgb(235, 241, 245);
+    height: 22px;
+    width: 22px;
+    border-radius: 12px;
+    -o-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    animation-name: f_fadeG;
+    -o-animation-name: f_fadeG;
+    -ms-animation-name: f_fadeG;
+    -webkit-animation-name: f_fadeG;
+    -moz-animation-name: f_fadeG;
+    animation-duration: 1.2s;
+    -o-animation-duration: 1.2s;
+    -ms-animation-duration: 1.2s;
+    -webkit-animation-duration: 1.2s;
+    -moz-animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -o-animation-direction: normal;
+    -ms-animation-direction: normal;
+    -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
+}
+
+#frotateG_01 {
+    left: 0;
+    top: 51px;
+    animation-delay: 0.45s;
+    -o-animation-delay: 0.45s;
+    -ms-animation-delay: 0.45s;
+    -webkit-animation-delay: 0.45s;
+    -moz-animation-delay: 0.45s;
+}
+
+#frotateG_02 {
+    left: 15px;
+    top: 15px;
+    animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    -ms-animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+}
+
+#frotateG_03 {
+    left: 51px;
+    top: 0;
+    animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
+    -ms-animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+}
+
+#frotateG_04 {
+    right: 15px;
+    top: 15px;
+    animation-delay: 0.9s;
+    -o-animation-delay: 0.9s;
+    -ms-animation-delay: 0.9s;
+    -webkit-animation-delay: 0.9s;
+    -moz-animation-delay: 0.9s;
+}
+
+#frotateG_05 {
+    right: 0;
+    top: 51px;
+    animation-delay: 1.05s;
+    -o-animation-delay: 1.05s;
+    -ms-animation-delay: 1.05s;
+    -webkit-animation-delay: 1.05s;
+    -moz-animation-delay: 1.05s;
+}
+
+#frotateG_06 {
+    right: 15px;
+    bottom: 15px;
+    animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    -ms-animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+}
+
+#frotateG_07 {
+    left: 51px;
+    bottom: 0;
+    animation-delay: 1.35s;
+    -o-animation-delay: 1.35s;
+    -ms-animation-delay: 1.35s;
+    -webkit-animation-delay: 1.35s;
+    -moz-animation-delay: 1.35s;
+}
+
+#frotateG_08 {
+    left: 15px;
+    bottom: 15px;
+    animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+}
+
+@keyframes f_fadeG {
+    0% {
+        background-color: rgba(10, 3, 3, 0.8);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@-o-keyframes f_fadeG {
+    0% {
+        background-color: rgba(10, 3, 3, 0.8);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@-ms-keyframes f_fadeG {
+    0% {
+        background-color: rgba(10, 3, 3, 0.8);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@-webkit-keyframes f_fadeG {
+    0% {
+        background-color: rgba(10, 3, 3, 0.8);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+@-moz-keyframes f_fadeG {
+    0% {
+        background-color: rgba(10, 3, 3, 0.8);
+    }
+
+    100% {
+        background-color: rgb(255, 255, 255);
+    }
+}
