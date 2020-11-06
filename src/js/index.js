@@ -63,12 +63,19 @@ class NumericalMetods {
         this.accuracy_rynge = config.accuracy_rynge;
         this.ready = false;
     }
-    getFunction(x) {
-        if (this.g != x) {
-            return this.a * Math.sin(this.b / Math.pow(x - this.g, 2)) * Math.cos(this.d * x);
-        } else {
-            return 1;
-        }
+    getFunction(x, y) {
+        let result = { x: 0, y: 0 };
+        result.x = 1 * x + 1 * y + 1 * y * x + 1;
+        result.y = 1 * x + 1 * y - 1 * y * y * y + 33;
+        // result.x = 1 * x + 1 * y;
+        // result.y = (1 * x - 1) * (y + x);
+        // if (this.g != x) {
+        //     return this.a * Math.sin(this.b / Math.pow(x - this.g, 2)) * Math.cos(this.d * x);
+        // } else {
+        //     return 1;
+        // }
+        // console.log("result", result, x, y);
+        return result;
     }
 
     updateConstants(kind, value) {
@@ -165,30 +172,48 @@ class NumericalMetods {
                 }
             };
             checkLoad();
-
-            let result_1 = 0,
-                result_2 = 2,
-                coef_step = 1,
-                j = 0;
-            for (let i = this.start_segment; i < this.end_segment; i += this.scale_parametrs) {
-                if (i != 0) {
-                    this[this.curent_parameter] = i;
-                    j = 0;
-                    coef_step = 1;
-
-                    while (true) {
-                        j++;
-                        result_1 = this.countingIntergral(coef_step);
-                        result_2 = this.countingIntergral(coef_step * 2);
-                        coef_step *= 2;
-                        if (j == 10 || Math.abs(result_2 - result_1) < this.accuracy_rynge) {
-                            j = 0;
-                            break;
-                        }
-                    }
-                    this.drawResult(result_1, i);
-                }
+            let curent_x = 1,
+                curent_y = 2, // начальные условия системы ( куда тыкаем н а канвасе )
+                n = 20,
+                res,
+                list = [],
+                x,
+                y;
+            this.scale_parametrs = 1; // шаг перехода
+            for (let i = 0; i < n; i++) {
+                res = this.getFunction(curent_x, curent_y);
+                curent_x = curent_x + this.scale_parametrs * res.x;
+                curent_y = curent_y + this.scale_parametrs * res.y;
+                list.push({ x: curent_x, y: curent_y });
+                // y = curent_x + this.scale_parametrs * res.x;
+                // x = curent_y + this.scale_parametrs * res.y;
+                // list.push({ x: x, y: y });
+                // x = curent_x;
+                // y = curent_y;
             }
+            console.log("list", list);
+            // let result_1 = 0,
+            //     result_2 = 2,
+            //     coef_step = 1,
+            //     j = 0;
+            // for (let i = this.start_segment; i < this.end_segment; i += this.scale_parametrs) {
+            // if (i != 0) {
+            //     this[this.curent_parameter] = i;
+            //     j = 0;
+            //     coef_step = 1;
+            //     // while (true) {
+            //     //     j++;
+            //     //     result_1 = this.countingIntergral(coef_step);
+            //     //     result_2 = this.countingIntergral(coef_step * 2);
+            //     //     coef_step *= 2;
+            //     //     if (j == 10 || Math.abs(result_2 - result_1) < this.accuracy_rynge) {
+            //     //         j = 0;
+            //     //         break;
+            //     //     }
+            //     // }
+            //     this.drawResult(result_1, i);
+            // }
+            // }
             this[this.curent_parameter] = 1;
             this.ready = true;
         });
